@@ -1,10 +1,47 @@
 import './App.css';
+import HeaderUI from './components/HeaderUI';
+import AlertUI from './components/AlertUI';
+import { Grid } from '@mui/material';
 
 function App() {
     return (
-        <div>
-            <h1>Bienvenido al Dashboard</h1>
-        </div>
+        <Grid container spacing={5} sx={{ justifyContent: 'center', alignItems: 'center' }}>
+            
+            <Grid size={{ xs: 12, md: 12 }}>
+                <HeaderUI />
+            </Grid>
+
+            {/* Alertas */}
+            <Grid size={{ xs: 12, md: 12 }}
+                container sx={{ justifyContent: 'flex-end', alignItems: 'center' }}>
+
+                <AlertUI description="No se prevén lluvias" />
+
+            </Grid>
+
+            {/* Selector */}
+            <Grid size={{ xs: 12, md: 3 }}>Elemento: Selector</Grid>
+
+            {/* Indicadores */}
+            <Grid size={{ xs: 12, md: 9 }}>Elemento: Indicadores</Grid>
+
+            {/* Gráfico */}
+            <Grid size={{ xs: 12, md: 6 }} sx={{ display: { xs: 'none', md: 'block' } }}>
+                Elemento: Gráfico
+            </Grid>
+
+            {/* Tabla */}
+            <Grid size={{ xs: 12, md: 6 }} sx={{ display: { xs: 'none', md: 'block' } }}>
+                Elemento: Tabla
+            </Grid>
+
+            {/* Información adicional */}
+            <Grid size={{ xs: 12, md: 12 }}>Elemento: Información adicional</Grid>
+
+        </Grid>
+
+        //<AlertUI description="No se prevén lluvias" />
+        //<AlertUI description="Índice UV alto" severity="warning" variant="filled" />
     );
 }
 
